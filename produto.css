@@ -162,3 +162,16 @@ td:first-child {
         font-size: 1.2em;
     }
 }
+
+.tamanho output {
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+
+    text-align: center;
+
+    border: 3px solid #666;
+    border-radius: 50%;
+    color: #555;
+}
