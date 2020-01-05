@@ -76,3 +76,8 @@ p::first-line{
 :not(p) + p::first-line{
     font-variant: small-caps;
 }
+
+iframe {
+    padding-left: 20%;
+}
+

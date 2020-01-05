@@ -353,3 +353,95 @@ background-image: url(../img/fundo-rodape.png);
         }
     }
     
+
+    .destaque {
+        position: relative;
+    }
+
+    .pause,
+    .play {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .pause {
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+        height: 30px;
+        width: 5px;
+    }
+
+    .play {
+        border-left: 25px solid #fff;
+        border-bottom: 15px solid transparent;
+        border-top: 15px solid transparent;
+    }
+
+    .painel li:nth-child(n+7) {
+        display: none;
+    }
+
+    .painel-aberto li:nth-child(n+7) {
+        display: inline-block;
+    }
+
+    .painel button {
+        /*Posicionamento */
+        position: relative;
+        margin-bottom: 10px;
+        float: right;
+        margin-right: 10px;
+        padding: 10px;
+
+        /*estilo */
+
+        background-color: #333;
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 1px 1px 3px rgba(30, 30, 30, 0.5);
+        color: white;
+        font-size: 1em;
+        text-decoration: none;
+        text-shadow: 1px 0 1px black;
+
+        /*animacao */
+
+        transform: 0.3s;
+        
+    }
+
+    .painel button:hover {
+        background-color: #393939;
+        box-shadow: 1px 0 20px rgba(200, 200, 120, 0.9);
+    }
+
+    .painel button::after {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+
+        /*triangulo */
+
+        border-top: 10px solid #333;
+        border-left:10px solid transparent;
+        border-right: 10px solid transparent;
+
+
+        /* posicionamento */
+
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+
+        /*animacao*/
+
+        transition: 0.3s;
+    }
+
+    .painel button:hover::after {
+        border-top-color: #393939;
+    }
