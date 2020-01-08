@@ -6,14 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="estilos.css">
-    <title>Mirror Fashion</title>
+    
+    <title>Produto Mirror Fashion</title>
 </head>
 <body>
-    <?php include("cabecalho.php"); ?>
+    <?php
+    $cabechalho_title = "Produto da Mirror Fashion";
+    include("cabecalho.php"); ?>
 
     <!--Conteudo da pagina-->
-
-
+    <form action="checkout.php" method="POST">
+    
     <?php include("rodape.php"); ?>
+
+    
 </body>
 </html>
