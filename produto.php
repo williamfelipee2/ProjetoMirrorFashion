@@ -1,3 +1,11 @@
+<?php 
+    $conexao = mysqli_connect("127.0.0.1", "root", "", "WD43");
+    $dados = mysqli_query($conexao, "SELECT * FROM produtos");
+    $produto = mysqli_fetch_array($dados);
+
+?> 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,9 +21,10 @@
 
 <body>
     <header class="container">
-        <h1>
+       <h1>
             <img src="img/logo.png" alt="logo da Mirror Fashion">
         </h1>
+
 
         <p class="sacola">
             Nenhum item na sacola de compras
@@ -36,29 +45,28 @@
 <div class="produto-back">
 <div class="container">
     <div class="produto">
-        <h1>Fuzz Cardigan</h1>
-        <p>por apenas R$ 129,90</p>
+        <h1><?= $produto['nome'] ?></h1>
+        <p>por apenas <?= $produto['preco']?></p>
 
         <form action="checkout.php" method="POST">
         <input type="hidden" name="nome" value="Fuzzy Cardigan">
-        <input type="hidden" name="preco" value="129,00">
         <input type="hidden" name="id" value="<?= $produto['id'] ?>">
             <fieldset class="cores">
                 <legend>Escolha a cor:</legend>
 
                 <input type="radio" name="cor" value="verde" id="verde" checked>
                 <label for="verde">
-                    <img src="img/produtos/foto1-verde.png" alt="produto da cor verde"> 
+                    <img src="img/produtos/foto1<?= $produto['id'] ?>-verde.png" alt="produto da cor verde"> 
                 </label>
 
                 <input type="radio" name="cor"  value="rosa" id="rosa">
                 <label for="rosa">
-                    <img src="img/produtos/foto1-rosa.png" alt="produto da cor rosa">
+                    <img src="img/produtos/foto1<?= $produto['id'] ?>-rosa.png" alt="produto da cor rosa">
                 </label>
 
                 <input type="radio" name="cor" value="azul" id="azul">
                 <label for="azul">
-                    <img src="img/produtos/foto1-azul.png" alt="produto da cor azul">
+                    <img src="img/produtos/foto1<?= $produto['id'] ?>-azul.png" alt="produto da cor azul">
                 </label>
             </fieldset>
 
@@ -77,12 +85,7 @@
         <div class="detalhes">
             <h2>Detalhes do produto</h2>
 
-            <p>
-                Esse é o melhor casaco de Cardigã que você já viu. Execelente
-                material italiano com estampa desenhada pelos artesãos da
-                comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
-                mesmo pela nossa entrega a jata.
-            </p>
+            <p><?= $produto['descricao'] ?></p>
 
             <table>
                 <thead>
@@ -122,8 +125,24 @@
 
     <?php include("rodape.php"); ?>
 
-
+    <script src="js/jquery.js"></script>
     <script type="text/javascript" src="js/produto.js"></script>
+
+    <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "http://connect.facebook.net/pt_BR/all.js#xfbml=1";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+		if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
+		js.src="http://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script>
 </body>
 
 </html>

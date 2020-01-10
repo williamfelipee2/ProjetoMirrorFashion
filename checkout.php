@@ -89,7 +89,7 @@
                                 <dd><?= $_POST['tamanho'] ?><dd>
 
                                 <dt>Preco</dt>
-                                <dd><?= $_POST['preco'] ?></dd>  
+                                <dd id="preco" >R$ 129.90</dd> 
                             </dl>
                         </div>
                     </div>
@@ -168,8 +168,6 @@
                 </div>
     
                 <div class="form-group">
-                <p>Preço: 
-                <dd id="preco" >R$ 129.90</dd></p>
                     <label for="total">Total:</label>
                     <output for="qtd preco" id="total" class="form-control">R$ 129.90</output>
                 </div>
